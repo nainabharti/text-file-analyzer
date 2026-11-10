@@ -13,3 +13,11 @@ with open(file_path, "r") as file:
 # Display file content
 print("\nFile Content:")
 print(content)
+
+# Count total lines
+lines = content.splitlines()
+total_lines = len(lines)
+
+# Display total lines
+print("\n===== FILE STATISTICS =====")
+print(f"Total Lines: {total_lines}")
