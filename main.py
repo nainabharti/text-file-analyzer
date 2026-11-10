@@ -1,3 +1,5 @@
+import string
+
 print("===== TEXT FILE ANALYZER =====")
 
 # Take file path from user
@@ -18,21 +20,31 @@ print(content)
 lines = content.splitlines()
 total_lines = len(lines)
 
-# Count total words
+# Split content into words
 words = content.split()
-total_words = len(words)
+
+# Normalize words
+cleaned_words = []
+
+for word in words:
+    word = word.lower()
+    word = word.strip(string.punctuation)
+    cleaned_words.append(word)
+
+# Count total words
+total_words = len(cleaned_words)
 
 # Count total characters
 total_characters = len(content)
 
 # Count unique words
-unique_words = set(words)
+unique_words = set(cleaned_words)
 unique_word_count = len(unique_words)
 
 # Calculate frequency of each word
 word_frequency = {}
 
-for word in words:
+for word in cleaned_words:
     if word in word_frequency:
         word_frequency[word] += 1
     else:
@@ -54,7 +66,7 @@ print("\n===== WORD FREQUENCY =====")
 for word, count in word_frequency.items():
     print(f"{word}: {count}")
 
-# Display top 5 words
+# Display top 5 frequent words
 print("\n===== TOP 5 MOST FREQUENT WORDS =====")
 for word, count in top_words:
     print(f"{word}: {count}")
