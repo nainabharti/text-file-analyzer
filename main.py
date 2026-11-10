@@ -18,6 +18,11 @@ print(content)
 lines = content.splitlines()
 total_lines = len(lines)
 
+# Count total words
+words = content.split()
+total_words = len(words)
+
 # Display total lines
 print("\n===== FILE STATISTICS =====")
 print(f"Total Lines: {total_lines}")
+print(f"Total Words: {total_words}")
