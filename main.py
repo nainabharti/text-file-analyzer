@@ -22,7 +22,11 @@ total_lines = len(lines)
 words = content.split()
 total_words = len(words)
 
+# Count total characters
+total_characters = len(content)
+
 # Display total lines
 print("\n===== FILE STATISTICS =====")
 print(f"Total Lines: {total_lines}")
 print(f"Total Words: {total_words}")
+print(f"Total Characters: {total_characters}")
