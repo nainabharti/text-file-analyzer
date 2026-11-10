@@ -38,6 +38,9 @@ for word in words:
     else:
         word_frequency[word] = 1 
 
+# Find top 5 most frequent words
+top_words = sorted(word_frequency.items(), key =lambda item: item[1], reverse = True)[:5]
+
 # Display statistics
 print("\n===== FILE STATISTICS =====")
 print(f"Total Lines: {total_lines}")
@@ -49,4 +52,9 @@ print(f"Unique Words: {unique_word_count}")
 print("\n===== WORD FREQUENCY =====")
 
 for word, count in word_frequency.items():
+    print(f"{word}: {count}")
+
+# Display top 5 words
+print("\n===== TOP 5 MOST FREQUENT WORDS =====")
+for word, count in top_words:
     print(f"{word}: {count}")
