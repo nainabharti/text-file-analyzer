@@ -25,8 +25,13 @@ total_words = len(words)
 # Count total characters
 total_characters = len(content)
 
+# Count total unique words
+unique_words = set(words)
+unique_word_count = len(unique_words)
+
 # Display total lines
 print("\n===== FILE STATISTICS =====")
 print(f"Total Lines: {total_lines}")
 print(f"Total Words: {total_words}")
 print(f"Total Characters: {total_characters}")
+print(f"Unique words: {unique_word_count}")
