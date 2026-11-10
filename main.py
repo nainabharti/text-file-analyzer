@@ -25,13 +25,28 @@ total_words = len(words)
 # Count total characters
 total_characters = len(content)
 
-# Count total unique words
+# Count unique words
 unique_words = set(words)
 unique_word_count = len(unique_words)
 
-# Display total lines
+# Calculate frequency of each word
+word_frequency = {}
+
+for word in words:
+    if word in word_frequency:
+        word_frequency[word] += 1
+    else:
+        word_frequency[word] = 1 
+
+# Display statistics
 print("\n===== FILE STATISTICS =====")
 print(f"Total Lines: {total_lines}")
 print(f"Total Words: {total_words}")
 print(f"Total Characters: {total_characters}")
-print(f"Unique words: {unique_word_count}")
+print(f"Unique Words: {unique_word_count}")
+
+# Display word frequency
+print("\n===== WORD FREQUENCY =====")
+
+for word, count in word_frequency.items():
+    print(f"{word}: {count}")
